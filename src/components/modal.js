@@ -21,3 +21,12 @@ function closeByEscape(evt) {
 }
 
 export { openPopup, closePopup, closeByEscape };
+
+
+
+
+
+
+ 
+      
+        

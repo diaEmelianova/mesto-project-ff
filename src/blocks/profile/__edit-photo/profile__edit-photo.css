@@ -1,0 +1,20 @@
+.profile__edit-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 0;
+  border: 0;
+  background: none;
+  position: absolute;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile__edit-photo:hover,
+.profile__edit-photo:focus {
+  background-image: url(../../../images/Vector-point.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+}
