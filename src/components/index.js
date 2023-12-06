@@ -1,4 +1,4 @@
-import createCard from "./card.js";
+import { createCard, removeCard, removeCardLike, setCardLike } from "./card.js";
 import {
   openPopup,
   closePopup,
@@ -152,8 +152,7 @@ function onLike(buttonLike, cardId, likeCounter) {
   if (buttonLike.classList.contains("element__like_active")) {
     unsetLike(cardId)
       .then((result) => {
-        buttonLike.classList.remove("element__like_active");
-        likeCounter.textContent = result.likes.length;
+        removeCardLike(buttonLike, likeCounter, result.likes.length);
       })
       .catch((err) => {
         console.log(err);
@@ -161,8 +160,7 @@ function onLike(buttonLike, cardId, likeCounter) {
   } else {
     setLike(cardId)
       .then((result) => {
-        buttonLike.classList.add("element__like_active");
-        likeCounter.textContent = result.likes.length;
+        setCardLike(buttonLike, likeCounter, result.likes.length);
       })
       .catch((err) => {
         console.log(err);
@@ -173,7 +171,7 @@ function onLike(buttonLike, cardId, likeCounter) {
 function onDelete(buttonDelete, cardId) {
   deleteCard(cardId)
     .then(() => {
-      buttonDelete.closest(".element").remove();
+      removeCard(buttonDelete);
     })
     .catch((err) => {
       console.log(err);

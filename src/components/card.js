@@ -1,6 +1,6 @@
 const elementTemplate = document.querySelector("#card");
 
-function createCard(
+export function createCard(
   title,
   link,
   isDelete,
@@ -42,4 +42,16 @@ function createCard(
   return newCard;
 }
 
-export default createCard;
+export function removeCardLike(buttonLike, likeCounter, likes) {
+  buttonLike.classList.remove("element__like_active");
+  likeCounter.textContent = likes;
+}
+
+export function setCardLike(buttonLike, likeCounter, likes) {
+  buttonLike.classList.add("element__like_active");
+  likeCounter.textContent = likes;
+}
+
+export function removeCard(buttonDelete) {
+  buttonDelete.closest(".element").remove();
+}

@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: all .5s ease;
     visibility: hidden;
     opacity: 0;
     

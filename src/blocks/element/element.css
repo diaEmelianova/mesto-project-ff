@@ -1,5 +1,6 @@
 .element {
     max-width: 282px;
+    height: 362px;
     display: flex;
     overflow: hidden;
     position: relative;
